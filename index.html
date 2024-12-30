@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Verse - AI Poetry Camera App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+      }
+
+      .animate-float {
+        animation: float 3s ease-in-out infinite;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-cover bg-center min-h-screen font-[Figtree]"
+    style="background-image: url('./assets/images/clouds.jpg')"
+  >
+    <div
+      class="flex flex-col md:flex-row items-center justify-center gap-8 max-w-10xl mx-auto p-2 mt-10"
+    >
+      <!-- Description Section -->
+      <div class="text-center md:text-left max-w-lg">
+        <p class="text-3xl text-black-900 mt-4">
+          Verse is a camera app that uses AI to generate poetry based on what it sees.
+        </p>
+        <a
+          href="#download"
+          class="cursor-wait mt-10 inline-block px-6 py-3 bg-blue-600 text-white text-md font-medium rounded-full hover:bg-blue-700 transition-colors"
+        >
+          Coming early 2025
+        </a>
+      </div>
+
+      <!-- Floating Phone Image -->
+      <div class="mt-2 md:mt-0">
+        <img
+          src="./assets/images/floatingphone.png"
+          alt="Floating Phone"
+          class="max-w-lg md:max-w-xl animate-float"
+        />
+      </div>
+    </div>
+  </body>
+</html>
