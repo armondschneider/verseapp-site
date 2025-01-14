@@ -11,48 +11,51 @@
       rel="stylesheet"
     />
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-      @keyframes float {
-        0%,
-        100% {
-          transform: translateY(0);
-        }
-        50% {
-          transform: translateY(-10px);
-        }
-      }
-
-      .animate-float {
-        animation: float 3s ease-in-out infinite;
-      }
-    </style>
   </head>
   <body
-    class="bg-cover bg-center min-h-screen font-[Figtree]"
-    style="background-image: url('./assets/images/clouds.jpg')"
+    class="relative font-[Figtree] h-screen overflow-hidden flex flex-col justify-between"
   >
-    <div
-      class="flex flex-col md:flex-row items-center justify-center gap-8 max-w-10xl mx-auto p-2 mt-10"
+    <!-- Background Video -->
+    <video
+      autoplay
+      muted
+      loop
+      class="absolute top-0 left-0 w-full h-full object-cover z-[-2]"
     >
-      <!-- Description Section -->
-      <div class="text-center md:text-left max-w-lg">
-        <p class="text-3xl text-black-900 mt-4">
-          Verse is a camera app that uses AI to generate poetry based on what it sees.
+      <source src="./assets/video/versebackground.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+
+    <!-- Blur Overlay -->
+    <div
+      class="absolute inset-0 backdrop-blur-[100px] bg-white/80 z-[-1]"
+    ></div>
+
+    <!-- Content -->
+    <div
+      class="flex flex-col items-center justify-center max-w-7xl mx-auto px-4 pt-10 pb-32"
+    >
+      <a
+        class="pointer-events-none inline-block px-4 py-3 bg-purple-200 text-purple-900 text-xs font-medium rounded-full"
+      >
+        AI Poetry Camera
+      </a>
+      <div class="text-center max-w-lg">
+        <p class="text-5xl text-black font-semibold mt-1">Verse Lens</p>
+        <p class="text-md text-black mt-4">
+          A camera app that uses AI to generate poetry based on what it sees.
         </p>
         <a
           href="#download"
-          class="cursor-wait mt-10 inline-block px-6 py-3 bg-blue-600 text-white text-md font-medium rounded-full hover:bg-blue-700 transition-colors"
+          class="mt-10 mb-8 inline-block px-6 py-3 bg-slate-900 text-white text-sm font-medium rounded-full hover:bg-slate-700 transition-colors"
         >
           Coming early 2025
         </a>
-      </div>
-
-      <!-- Floating Phone Image -->
-      <div class="mt-2 md:mt-0">
+        <!-- Sticky Phone Image -->
         <img
-          src="./assets/images/floatingphone.png"
-          alt="Floating Phone"
-          class="max-w-lg md:max-w-xl animate-float"
+          src="./assets/images/mobileverse.png"
+          alt="Mobile Verse"
+          class="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-[20%] w-1/2 max-w-xs"
         />
       </div>
     </div>
