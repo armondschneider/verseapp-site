@@ -6,12 +6,17 @@
     <title>Verse - AI Poetry Camera App</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Using Instrument Serif font -->
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <video autoplay muted loop>
+    <video id="bg-video" autoplay muted loop>
       <source src="./assets/video/background.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+    <video id="grain-video" autoplay muted loop>
+      <source src="./assets/video/grain.mp4" type="video/mp4" />
       Your browser does not support the video tag.
     </video>
 
@@ -31,6 +36,10 @@
         </filter>
       </defs>
     </svg>
+
+    <div id="footer-message">
+      Coming <em>soon</em> to iOS
+    </div>
 
     <script src="script.js"></script>
   </body>

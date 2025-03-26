@@ -3,7 +3,7 @@ const elts = {
     text2: document.getElementById("text2")
   };
   
-  const texts = ["Verse", "is", "for", "AI", "poetry"];
+  const texts = ["Verse", "generates", "AI", "poems", "from", "your", "camera"];
   
   const morphTime = 8;
   const cooldownTime = 4;
@@ -54,8 +54,8 @@ const elts = {
     requestAnimationFrame(animate);
   
     let newTime = new Date();
-    let shouldIncrementIndex = cooldown > 0; // Only increment if we were in cooldown in the previous frame.
-    let dt = (newTime - time) / 100;
+    let shouldIncrementIndex = cooldown > 0; 
+    let dt = (newTime - time) / 150;
     time = newTime;
   
     cooldown -= dt;
