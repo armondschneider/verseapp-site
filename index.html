@@ -6,58 +6,32 @@
     <title>Verse - AI Poetry Camera App</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap"
-      rel="stylesheet"
-    />
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
   </head>
-  <body
-    class="relative font-[Figtree] h-screen overflow-hidden flex flex-col justify-between"
-  >
-    <!-- Background Video -->
-    <video
-      autoplay
-      muted
-      loop
-      class="absolute top-0 left-0 w-full h-full object-cover z-[-2]"
-    >
-      <source src="./assets/video/versebackground.mp4" type="video/mp4" />
+  <body>
+    <video autoplay muted loop>
+      <source src="./assets/video/background.mp4" type="video/mp4" />
       Your browser does not support the video tag.
     </video>
 
-    <!-- Blur Overlay -->
-    <div
-      class="absolute inset-0 backdrop-blur-[20px] bg-white/80 z-[-1]"
-    ></div>
-
-    <!-- Content -->
-    <div
-      class="flex flex-col items-center justify-center max-w-7xl mx-auto px-4 pt-10 pb-32"
-    >
-      <a
-        class="pointer-events-none inline-block px-4 py-3 bg-purple-200 text-purple-900 text-xs font-medium rounded-full"
-      >
-        AI Poetry Camera
-      </a>
-      <div class="text-center max-w-lg">
-        <p class="text-5xl text-black font-semibold mt-1">Verse Lens</p>
-        <p class="text-md text-black mt-4">
-          A camera app that uses AI to generate poetry based on what it sees.
-        </p>
-        <a
-          href="#download"
-          class="mt-10 mb-8 inline-block px-6 py-3 bg-slate-900 text-white text-sm font-medium rounded-full hover:bg-slate-700 transition-colors"
-        >
-          Coming early 2025
-        </a>
-        <!-- Sticky Phone Image -->
-        <img
-          src="./assets/images/mobileverse.png"
-          alt="Mobile Verse"
-          class="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-[20%] w-1/2 max-w-xs"
-        />
-      </div>
+    <div id="container">
+      <span id="text1"></span>
+      <span id="text2"></span>
     </div>
+
+    <svg id="filters">
+      <defs>
+        <filter id="threshold">
+          <feColorMatrix in="SourceGraphic" type="matrix"
+            values="1 0 0 0 0
+                    0 1 0 0 0
+                    0 0 1 0 0
+                    0 0 0 255 -140" />
+        </filter>
+      </defs>
+    </svg>
+
+    <script src="script.js"></script>
   </body>
 </html>
