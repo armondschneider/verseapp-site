@@ -1,68 +1,101 @@
 html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    overflow: hidden;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+  animation: morphIn 1.5s ease-out forwards;
+}
+
+@keyframes morphIn {
+  0% {
+    opacity: 0;
+    filter: blur(60px);
+    transform: scale(0.95);
   }
-  
-  #bg-video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -3;
+  100% {
+    opacity: 1;
+    filter: blur(0);
+    transform: scale(1);
   }
-  
-  #grain-video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -2;
-    mix-blend-mode: screen;
-    opacity: 0.6;
-  }
-  
-  #container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    filter: url(#threshold) blur(0.6px);
-    text-align: center;
-    z-index: 1;
-  }
-  
-  /* Both text layers are centered to prevent drifting */
+}
+
+#bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -3;
+}
+
+#container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  filter: url(#threshold) blur(0.6px);
+  text-align: center;
+  z-index: 1;
+}
+
+#applogo {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 18px;
+  box-sizing: border-box;
+  z-index: 2;
+}
+
+#applogo img {
+  width: 60%;
+  height: 60%;
+  object-fit: contain;
+  display: block;
+}
+
+#text1,
+#text2 {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Instrument Serif', serif;
+  font-size: 134px;
+  color: white;
+  text-align: center;
+  user-select: none;
+}
+
+@media (max-width: 600px) {
   #text1,
   #text2 {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    font-family: 'Instrument Serif', serif;
-    font-size: 134px;
-    color: white;
-    text-align: center;
-    user-select: none;
+    font-size: 88px;
   }
+}
 
-  #footer-message {
-    position: absolute;
-    bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 20px 30px;
-    background-color: rgba(255, 255, 255, 0.1);
-    color: white;
-    border-radius: 14px;
-    font-family: 'Instrument Serif', serif;
-    font-size: 1.25rem;
-    text-align: center;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-  }
+#footer-message {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 20px 30px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  border-radius: 18px;
+  font-family: 'Instrument Serif', serif;
+  font-size: 1.25rem;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}

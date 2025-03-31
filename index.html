@@ -3,22 +3,76 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- seo -->
+    <meta
+      name="description"
+      content="Verse - A camera app that generates AI poetry from what it sees."
+    />
+    <meta name="keywords" content="AI, poetry, camera, app, verse" />
+    <meta name="author" content="Your Name or Company" />
+    <link rel="canonical" href="https://withverse.app" />
+
+    <!-- favicon -->
+    <link
+      rel="icon"
+      href="https://withverse.app/assets/images/favicon.png"
+      type="image/x-icon"
+    />
+    <link
+      rel="apple-touch-icon"
+      href="https://withverse.app/assets/images/apple-touch-icon.png"
+    />
+
+    <!-- Open Graph / Twitter meta tags for social sharing (from previous answer) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://withverse.app" />
+    <meta property="og:title" content="verse - generate ai poems from photos" />
+    <meta
+      property="og:description"
+      content="A camera app that generates AI poetry from what it sees."
+    />
+    <meta
+      property="og:image"
+      content="https://withverse.app/assets/images/preview.png"
+    />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://withverse.app" />
+    <meta name="twitter:title" content="verse - generate ai poems from photos" />
+    <meta
+      name="twitter:description"
+      content="A camera app that generates AI poetry from what it sees."
+    />
+    <meta
+      name="twitter:image"
+      content="https://withverse.app/assets/images/preview.png"
+    />
     <title>Verse - AI Poetry Camera App</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <!-- Using Instrument Serif font -->
-    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Instrument+Serif&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <audio
+      src="assets/backgroundscape.mp3"
+      autoplay
+      loop
+      style="display: none"
+    ></audio>
+
     <video id="bg-video" autoplay muted loop>
       <source src="./assets/video/background.mp4" type="video/mp4" />
       Your browser does not support the video tag.
     </video>
-    <video id="grain-video" autoplay muted loop>
-      <source src="./assets/video/grain.mp4" type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
+
+    <div id="applogo">
+      <img src="assets/images/applogo.png" alt="App Icon" />
+    </div>
 
     <div id="container">
       <span id="text1"></span>
@@ -28,18 +82,19 @@
     <svg id="filters">
       <defs>
         <filter id="threshold">
-          <feColorMatrix in="SourceGraphic" type="matrix"
+          <feColorMatrix
+            in="SourceGraphic"
+            type="matrix"
             values="1 0 0 0 0
                     0 1 0 0 0
                     0 0 1 0 0
-                    0 0 0 255 -140" />
+                    0 0 0 255 -140"
+          />
         </filter>
       </defs>
     </svg>
 
-    <div id="footer-message">
-      Coming <em>soon</em> to iOS
-    </div>
+    <div id="footer-message">Coming <em>soon</em> to iOS</div>
 
     <script src="script.js"></script>
   </body>
